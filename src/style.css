@@ -10,7 +10,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 img, picture, svg, video {
@@ -62,7 +62,22 @@ main{
   align-items: stretch;
 }
 
-.left_pannel {
+.print-button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  background-color: #d79921;
+  color: #282828;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.print-button:hover {
+  background-color: #b57614;
+}
+
+.left-panel {
   display: flex;
   flex-wrap: wrap;
   column-gap: 1rem;
@@ -73,16 +88,16 @@ main{
   color: #f2e5bc;
 }
 
-.left_pannel h2 {
+.left-panel h2 {
   background-color: #3c3836;
   padding: 0.15rem 0.4rem;
 }
 
-.left_pannel section::selection {
+.left-panel section::selection {
   background-color: #b57614;
 }
 
-.left_pannel section::-moz-selection {
+.left-panel section::-moz-selection {
    background-color: #b57614;
 }
 
@@ -100,9 +115,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
-i {
-  text-decoration: underline;
-  text-decoration-color: #d79921;
+a:focus-visible {
+   outline: 3px solid currentColor;
+   outline-offset: 2px;
+   border-radius: 2px;
 }
 
 .contato {
@@ -128,6 +144,11 @@ i {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
+}
+
+.telefone a {
+   text-decoration: underline;
+   color: inherit;
 }
 
 .telefone::before {
@@ -170,6 +191,23 @@ i {
   color: #00a6ff;
 }
 
+.github {
+   display: flex;
+   align-items: center;
+   column-gap: 0.5rem;
+}
+
+.github a {
+   text-decoration: underline;
+   color: inherit;
+}
+
+.github::before{
+   font-family: "bootstrap-icons";
+   content: "\F3ED";
+   color: #bdae93;
+}
+
 .skills {
   display: flex;
   list-style: none;
@@ -179,7 +217,7 @@ i {
 
 .skills li {
   display: flex;
-  align-items: center;
+  align-items: start;
   column-gap: 0.75rem;
 }
 
@@ -188,6 +226,7 @@ i {
   content: "\F287";
   font-size: 0.33rem;
   color: #d79921;
+  padding-top: 0.5rem;
 }
 
 .languages {
@@ -199,8 +238,13 @@ i {
 
 .languages li {
   display: flex;
-  align-items: center;
+  align-items: start;
   column-gap: 0.75rem;
+
+   span {
+      text-decoration: underline;
+      text-decoration-color: #d79921;
+   }
 }
 
 .languages li::before {
@@ -208,24 +252,25 @@ i {
   content: "\F287";
   font-size: 0.33rem;
   color: #d79921;
+  padding-top: 0.5rem;
 }
 
-.right_pannel {
+.right-panel {
   flex: 4 1 30rem;
   background-color: #d79921;
   border-radius: 5px;
 }
 
-.right_pannel h2 {
+.right-panel h2 {
   padding: 0.15rem 0.4rem;
   color: #3c3836;
 }
 
-.right_pannel section::selection {
+.right-panel section::selection {
    background-color: #458588;
 }
 
-.right_pannel section::-moz-selection {
+.right-panel section::-moz-selection {
    background-color: #458588;
 }
 
@@ -233,7 +278,6 @@ i {
   font-size: 105%;
   text-align: justify;
   background-color: #076678;
-  background-color: #79740e;
   padding: 1rem;
   border-radius: 5px;
   color: #f2e5bc;
@@ -272,60 +316,76 @@ i {
   color: #f2e5bc;
 }
 
-.job_place {
+.job-place {
   font-size: 105%;
 }
 
-.job_position_date{
+.job-position-date{
   color: #bdae93;
 }
 
-.job_desc {
+.job-desc {
   font-size: inherit;
   padding-top: 0.5rem;
+
+   ul {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      row-gap: 0.5rem;
+
+      li {
+         padding: 0;
+         display: flex;
+         align-items: start;
+         flex-direction: row;
+         column-gap: 0.75rem;
+
+         &::before {
+            font-family: "bootstrap-icons";
+            content: "\F287";
+            font-size: 0.33rem;
+            color: #d79921;
+            padding-top: 0.5rem;
+         }
+      }
+   }
 }
 
-.general_ul {
+.general-ul {
   display: flex;
   list-style: none;
   flex-direction: column;
   row-gap: 1rem;
 }
 
-.general_ul::selection {
+.general-ul::selection {
   background-color: #b57614;
 }
 
-.general_ul::-moz-selection {
+.general-ul::-moz-selection {
   background-color: #b57614;
 }
 
-.general_ul li {
+.general-ul li {
   display: flex;
   flex-direction: column;
   row-gap: 0.25rem;
   padding: 1rem;
   border-radius: 5px;
   color: #f2e5bc;
+  background-color: #076678;
 }
 
-.general_ul_academics li {
-  background-color: #8f3f71;
-}
-
-.general_ul_courses li {
-  background-color: #427b58;
-} 
-
-.general_label {
+.general-label {
   font-size: 105%;
 }
 
-.general_date {
+.general-date {
   color: #bdae93;
 }
 
-.general_institution {
+.general-institution {
   font-size: inherit;
 }
 
@@ -335,4 +395,111 @@ footer {
   background-color: #282828;
   color: #f2e5bc;
   text-align: center;
+}
+
+.pdf-only {
+   display: none;
+}
+
+
+/* Currículo em PDF */
+@media print {
+   @page {
+      size: A4;
+      margin: 12mm;
+   }
+
+   .pdf-only {
+      display: inline;
+   }
+
+   .web-only {
+      display: none;
+   }
+
+   body {
+      font-size: 10.5pt;
+      line-height: 1.35;
+   }
+
+   .print-button {
+      display: none;
+   }
+
+   body, header, footer, .left-panel, .right-panel, .profile, .job li, .general-ul li {
+      background: none;
+      color: #000;
+      border-radius: 0;
+   }
+
+   main {
+      flex-direction: column;
+      padding: 0;
+      row-gap: 0;
+   }
+
+   .left-panel, .right-panel {
+      display: block;
+      flex: 1 1 auto;
+   }
+
+   section {
+      padding: 0 0 0.5rem;
+      break-inside: auto;
+   }
+
+   header {
+      padding: 0 0 0.5rem;
+      text-align: left;
+   }
+
+   h2 {
+      font-size: 1.1rem;
+      border-bottom: 1px solid #000;
+      padding: 0;
+      break-after: avoid;
+      margin-bottom: 0.35rem;
+   }
+
+   .contato li::before, .skills li::before, .languages li::before, .job-desc li::before {
+      display: none;
+   }
+
+   .contato li, .skills li, .job-desc li {
+      column-gap: 0;
+   }
+
+   a {
+      color: #000;
+      text-decoration: underline;
+   }
+
+   li {
+      break-inside: avoid;
+   }
+
+   footer {
+      display: none;
+   }
+
+   .general-ul li, .job li {
+      padding: 0;
+   }
+
+   .general-ul, .job {
+      row-gap: 0.4rem;
+   }
+
+   .profile {
+      text-align: left;
+      padding: 0;
+   }
+
+   .job-position-date, .general-date {
+      color: #000;
+   }
+
+   .languages li span {
+      text-decoration: none;
+   }
 }
